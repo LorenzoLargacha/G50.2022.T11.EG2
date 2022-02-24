@@ -1,3 +1,3 @@
-from UC3MCare.vaccineRequest import VaccineRequest
-from UC3MCare.vaccineManager import VaccineManager
-from UC3MCare.vaccineMangementException import VaccineManagementException
+from UC3MCare.VaccineRequest import VaccineRequest
+from UC3MCare.VaccineManager import VaccineManager
+from UC3MCare.VaccineMangementException import VaccineManagementException

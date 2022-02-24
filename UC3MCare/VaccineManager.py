@@ -1,6 +1,6 @@
 import json
-from .vaccineMangementException import VaccineManagementException
-from .vaccineRequest import VaccineRequest
+from .VaccineMangementException import VaccineManagementException
+from .VaccineRequest import VaccineRequest
 
 class VaccineManager:
     def __init__(self):
