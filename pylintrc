@@ -321,10 +321,11 @@ min-similarity-lines=4
 
 # Naming style matching correct argument names.
 #argument-naming-style=snake_case
+argument-naming-style=camelCase
 
 # Regular expression matching correct argument names. Overrides argument-
 # naming-style.
-argument-rgx=[TX_][a-z]
+#argument-rgx=^[RX_][a-z]
 
 # Naming style matching correct attribute names.
 attr-naming-style=snake_case

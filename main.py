@@ -17,9 +17,9 @@ def Encode(word):
             encoded = encoded + letters[x]
     return encoded
 
-def Decode(TX_word):
+def Decode(word):
     encoded = ""
-    for letter in TX_word:
+    for letter in word:
         if letter == ' ':
             encoded = encoded + ' '
         else:

@@ -1,4 +1,7 @@
+# Importamos el fichero json y la libreria uuid
 import json
+import uuid
+
 from .VaccineMangementException import VaccineManagementException
 from .VaccineRequest import VaccineRequest
 
@@ -7,9 +10,22 @@ class VaccineManager:
         pass
 
     def ValidateGUID( self, GUID ):
-        # PLEASE INCLUDE HERE THE CODE FOR VALIDATING THE GUID
+        # CODE FOR VALIDATING THE GUID
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
+        try:
+            myUUID = uuid.UUID(GUID)
+            import re
+            myregex = re.compile(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-'
+                                 r'[0-9A-F]{12}$'
+                                 , re.IGNORECASE)
+            x = myregex.fullmatch(GUID)
+            if not x:
+                raise VaccineManagementException("Invalid UUID v4 format")
+        # Definimos un error e como ValueError
+        except ValueError as e:
+            raise VaccineManagementException("Id received is not a UUID") from e
         return True
+
 
     def ReadaccessrequestfromJSON(self, fi):
 
@@ -20,7 +36,6 @@ class VaccineManager:
             raise VaccineManagementException("Wrong file or file path") from e
         except json.JSONDecodeError as e:
             raise VaccineManagementException("JSON Decode Error - Wrong JSON Format") from e
-
 
         try:
             Guid = DATA["id"]
