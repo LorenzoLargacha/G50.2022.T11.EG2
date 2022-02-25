@@ -325,18 +325,18 @@ min-similarity-lines=4
 
 # Naming style matching correct argument names.
 #argument-naming-style=snake_case
-argument-naming-style=PascalCase
+argument-naming-style=UPPER_CASE
 
 # Regular expression matching correct argument names. Overrides argument-
 # naming-style.
 #argument-rgx=^[RX_][a-z]
 
 # Naming style matching correct attribute names.
-attr-naming-style=snake_case
+#attr-naming-style=snake_case
 
 # Regular expression matching correct attribute names. Overrides attr-naming-
 # style.
-#attr-rgx=
+attr-rgx=__[a-z]{1,}
 
 # Bad variable names which should always be refused, separated by a comma.
 bad-names=foo,
@@ -351,25 +351,25 @@ bad-names=foo,
 bad-names-rgxs=
 
 # Naming style matching correct class attribute names.
-class-attribute-naming-style=any
+#class-attribute-naming-style=any
 
 # Regular expression matching correct class attribute names. Overrides class-
 # attribute-naming-style.
-#class-attribute-rgx=
+#class-attribute-rgx=__[A-Z][a-z]{1,}
 
 # Naming style matching correct class constant names.
 #class-const-naming-style=UPPER_CASE
 
 # Regular expression matching correct class constant names. Overrides class-
 # const-naming-style.
-class-const-rgx= CONST_[a-z]{1,}
+class-const-rgx= CONST_[A-Z]{1,}
 
 # Naming style matching correct class names.
-class-naming-style=PascalCase
+#class-naming-style=PascalCase
 
 # Regular expression matching correct class names. Overrides class-naming-
 # style.
-#class-rgx=
+class-rgx= _[a-z]{1,}
 
 # Naming style matching correct constant names.
 const-naming-style= snake_case
@@ -383,7 +383,7 @@ const-naming-style= snake_case
 docstring-min-length=-1
 
 # Naming style matching correct function names.
-function-naming-style=snake_case
+function-naming-style=PascalCase
 
 # Regular expression matching correct function names. Overrides function-
 # naming-style.
@@ -405,14 +405,14 @@ good-names-rgxs=
 include-naming-hint=no
 
 # Naming style matching correct inline iteration names.
-inlinevar-naming-style=any
+#inlinevar-naming-style=any
 
 # Regular expression matching correct inline iteration names. Overrides
 # inlinevar-naming-style.
-#inlinevar-rgx=
+inlinevar-rgx=[0-9][a-z]{2,20}$
 
 # Naming style matching correct method names.
-method-naming-style=snake_case
+method-naming-style=PascalCase
 
 # Regular expression matching correct method names. Overrides method-naming-
 # style.
