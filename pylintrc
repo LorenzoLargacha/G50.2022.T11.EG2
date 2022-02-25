@@ -62,6 +62,10 @@ suggestion-mode=yes
 # active Python interpreter and may run arbitrary code.
 unsafe-load-any-extension=no
 
+#Deshabilitamos los comentarios obligatorios en las clases, los módulos y las funciones
+disable=
+    C0114,C0115, C0116
+
 
 [MESSAGES CONTROL]
 
@@ -321,7 +325,7 @@ min-similarity-lines=4
 
 # Naming style matching correct argument names.
 #argument-naming-style=snake_case
-argument-naming-style=camelCase
+argument-naming-style=PascalCase
 
 # Regular expression matching correct argument names. Overrides argument-
 # naming-style.
@@ -354,11 +358,11 @@ class-attribute-naming-style=any
 #class-attribute-rgx=
 
 # Naming style matching correct class constant names.
-class-const-naming-style=UPPER_CASE
+#class-const-naming-style=UPPER_CASE
 
 # Regular expression matching correct class constant names. Overrides class-
 # const-naming-style.
-#class-const-rgx=
+class-const-rgx= CONST_[a-z]{1,}
 
 # Naming style matching correct class names.
 class-naming-style=PascalCase
@@ -368,7 +372,7 @@ class-naming-style=PascalCase
 #class-rgx=
 
 # Naming style matching correct constant names.
-const-naming-style=UPPER_CASE
+const-naming-style= snake_case
 
 # Regular expression matching correct constant names. Overrides const-naming-
 # style.
@@ -435,11 +439,11 @@ no-docstring-rgx=^_
 property-classes=abc.abstractproperty
 
 # Naming style matching correct variable names.
-variable-naming-style=snake_case
+variable-naming-style= any
 
 # Regular expression matching correct variable names. Overrides variable-
 # naming-style.
-#variable-rgx=
+#variable-rgx= PRE_[a-z]{1,}
 
 
 [STRING]

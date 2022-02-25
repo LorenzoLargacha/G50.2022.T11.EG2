@@ -1,6 +1,8 @@
 # Importamos el fichero json y la libreria uuid
 import json
 import uuid
+# sacamos el import fuera
+import re
 
 from .VaccineMangementException import VaccineManagementException
 from .VaccineRequest import VaccineRequest
@@ -14,7 +16,6 @@ class VaccineManager:
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
         try:
             myUUID = uuid.UUID(GUID)
-            import re
             myregex = re.compile(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-'
                                  r'[0-9A-F]{12}$'
                                  , re.IGNORECASE)
