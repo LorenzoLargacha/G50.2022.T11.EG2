@@ -11,11 +11,13 @@ class vaccineManager:
     def __init__(self):
         pass
 
-    def ValidateGUID(self, GUID):
+    @classmethod
+    def ValidateGUID(cls, GUID):
         # CODE FOR VALIDATING THE GUID
         # RETURN TRUE IF THE GUID IS RIGHT, OR FALSE IN OTHER CASE
         try:
             MYUUID = uuid.UUID(GUID)
+            print(MYUUID)
             MYREGEX = re.compile(r'^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[89AB][0-9A-F]{3}-'
                                  r'[0-9A-F]{12}$'
                                  , re.IGNORECASE)
@@ -32,7 +34,8 @@ class vaccineManager:
     def ReadAccessRequestFromJSON(self, fi):
 
         try:
-            with open(fi) as FILE:
+            # añadimos un encoding con permisos para leer el fichero
+            with open(fi, encoding='UTF-8') as FILE:
                 DATA = json.load(FILE)
         except FileNotFoundError as ERROR:
             raise vaccineManagementException("Wrong file or file path") from ERROR

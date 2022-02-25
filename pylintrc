@@ -332,11 +332,11 @@ argument-naming-style=any
 #argument-rgx=^[RX_][a-z]
 
 # Naming style matching correct attribute names.
-#attr-naming-style=snake_case
+attr-naming-style=camelCase
 
 # Regular expression matching correct attribute names. Overrides attr-naming-
 # style.
-attr-rgx=__[a-z]{1,}
+#attr-rgx=__[a-z]{1,}
 
 # Bad variable names which should always be refused, separated by a comma.
 bad-names=foo,
